@@ -56,6 +56,7 @@ module.exports={
                     esModule:false,
                     // [hash:10]取图片hash前10位 [ext]原来的文件的扩展名
                     name:'[hash:10].[ext]',
+                    // 启动报错 404
                     outputPath:'img',
                     publicPath:'./img'
                 },
