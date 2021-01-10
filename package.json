@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npx webpack",
+    "start": "npx webpack serve",
+    "build": "npx webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.12.2",
-    "webpack-cli": "^4.3.1"
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
   }
 }

@@ -15,7 +15,7 @@ module.exports={
     output:{
         filename:'main.js',
         path:resolve(__dirname,'dist'),
-        publicPath:'./' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
+      //  publicPath:'./' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
     },
     // loader 配置
     module:{
@@ -55,8 +55,10 @@ module.exports={
                     // 关闭url-loader es6模块
                     esModule:false,
                     // [hash:10]取图片hash前10位 [ext]原来的文件的扩展名
-                    name:'[hash:10].[ext]'
-                }
+                    name:'[hash:10].[ext]',
+                    outputPath:'img',
+                    publicPath:'./img'
+                },
             },
             {
                 // 处理html文件的img图片（引入img从而被url-loader进行处理）
@@ -83,5 +85,18 @@ module.exports={
             // 使用模板文件
             template:'./src/index.html'
         })
-    ]
+    ],
+    // 开发服务器 devServer 自动编译打开浏览器 刷新
+    // 只会在内存中编译打包，不会有任何输出
+    devServer:{
+        contentBase:resolve(__dirname,'dist'),
+        // 启动gzip压缩
+        compress:true,
+        // 端口号
+        port:8080,
+        // 自动打开默认浏览器
+        open:true,
+        // 热加载
+        hot:true
+    }
 }
