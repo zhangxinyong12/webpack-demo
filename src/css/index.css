@@ -37,3 +37,8 @@ li{
     text-align: center;
     margin:0 auto;
 }
+
+ul{
+    display: flex;
+    box-sizing: border-box;
+}
