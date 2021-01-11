@@ -26,6 +26,7 @@
     "less": "^4.1.0",
     "less-loader": "^7.2.1",
     "mini-css-extract-plugin": "^1.3.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^2.0.0",
@@ -34,13 +35,13 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.1"
   },
-  "browserslist":{
-    "devlopment":[
+  "browserslist": {
+    "devlopment": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "production":[
+    "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"

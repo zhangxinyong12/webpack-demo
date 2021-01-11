@@ -6,7 +6,7 @@
 const {resolve}=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin');
 
 // 设置nodejs环境变量
 // process.env.NODE_ENV='development';
@@ -105,7 +105,9 @@ module.exports={
         }),
         new MiniCssExtractPlugin({
             filename:'css/index.css'
-        })
+        }),
+        // 压缩css
+        new OptimizeCssAssetsWebpackPlugin()
     ],
     // 开发服务器 devServer 自动编译打开浏览器 刷新
     // 只会在内存中编译打包，不会有任何输出
