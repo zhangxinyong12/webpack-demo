@@ -5,17 +5,17 @@
 
 const {resolve}=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports={
-    // 模式 开发模式
+    // 模式 开发模式:development;生成环境:production
     mode:'development',
     // 入口
     entry:'./src/main.js',
     // 出口
     output:{
-        filename:'main.js',
+        filename:'js/main.js',
         path:resolve(__dirname,'dist'),
-      //  publicPath:'./' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
+       publicPath:'/' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
     },
     // loader 配置
     module:{
@@ -27,7 +27,9 @@ module.exports={
                 use:[
                     // use数组中的loader执行顺序；从右到左 从下到上
                     // 创建style标签 将js中的样式资源插入到head中生效
-                    'style-loader',
+                    // 'style-loader',
+                    // 取代style-loader，提取js成单独css文件
+                    MiniCssExtractPlugin.loader,
                     // 将css文件变成commonjs模块加载js中里面内容都是样式字符串
                     'css-loader'
                 ]
@@ -35,7 +37,9 @@ module.exports={
             {
                 test:/\.less$/,
                 use:[
-                    'style-loader',
+                    // 'style-loader',
+                    MiniCssExtractPlugin.loader,
+
                     'css-loader',
                     'less-loader'
                 ]
@@ -64,7 +68,7 @@ module.exports={
             {
                 // 处理html文件的img图片（引入img从而被url-loader进行处理）
                 test:/\.html$/,
-                loader:'html-loader'
+                loader:'html-loader',
             },
             {
                 // 其他资源
@@ -73,7 +77,8 @@ module.exports={
                 // exclude:/\.(css|less|scss|js|html|jpg|png|gif)$/,
                 loader:'file-loader',
                 options:{
-                    name:'[hash:10].[ext]'
+                    name:'[hash:10].[ext]',
+                    outputPath:'iconfont'
                 }
             }
         ]
@@ -85,6 +90,9 @@ module.exports={
         new HtmlWebpackPlugin({
             // 使用模板文件
             template:'./src/index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename:'css/index.css'
         })
     ],
     // 开发服务器 devServer 自动编译打开浏览器 刷新

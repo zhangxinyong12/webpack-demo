@@ -26,3 +26,14 @@ li:nth-child(4){
     font-size: 16px;
     color: #999;
 }
+
+img{
+    width: 40px;
+}
+li{
+    width: 80px;
+    height: 80px;
+    border: 1px solid red;
+    text-align: center;
+    margin:0 auto;
+}
