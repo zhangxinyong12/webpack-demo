@@ -14,10 +14,13 @@ module.exports={
     // 模式 开发模式:development;生成环境:production
     mode:'development',
     // 入口
-    entry:'./src/main.js',
+    entry:{
+        'main':'./src/main.js',
+        'index':'./src/js/index.js'
+    },
     // 出口
     output:{
-        filename:'js/main.js',
+        filename:'js/[name].js',
         path:resolve(__dirname,'dist'),
        publicPath:'/' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
     },
@@ -91,6 +94,21 @@ module.exports={
                 options:{
                     name:'[hash:10].[ext]',
                     outputPath:'iconfont'
+                }
+            },
+            {
+                /*
+                 * 语法检查 eslint-loader eslint
+                 *  设置规则：
+                 *  package.json 中  eslintConfig中设置~
+                 *  airbnb --> eslint-config-airbnb-base eslint eslint-plugin-import
+                */ 
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'eslint-loader',
+                options:{
+                    // 自动修复错误
+                    fix:true
                 }
             }
         ]

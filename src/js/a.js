@@ -1,3 +1,4 @@
-export const a=(a,b)=>{
-    console.log('a+b=',a+b);
-}
+const add = (a, b) => {
+  console.log('a+b=', a + b);
+};
+export default add;

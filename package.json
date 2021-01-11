@@ -20,6 +20,10 @@
   "homepage": "https://github.com/zhangxinyong12/webpack-demo#readme",
   "devDependencies": {
     "css-loader": "^5.0.1",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
     "file-loader": "^6.2.0",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.1",
@@ -46,5 +50,8 @@
       "not dead",
       "not op_mini all"
     ]
+  },
+  "eslintConfig":{
+    "extends":"airbnb-base"
   }
 }
