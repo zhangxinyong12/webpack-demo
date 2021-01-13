@@ -19,6 +19,11 @@
   },
   "homepage": "https://github.com/zhangxinyong12/webpack-demo#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.8.2",
     "css-loader": "^5.0.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -51,7 +56,7 @@
       "not op_mini all"
     ]
   },
-  "eslintConfig":{
-    "extends":"airbnb-base"
+  "eslintConfig": {
+    "extends": "airbnb-base"
   }
 }

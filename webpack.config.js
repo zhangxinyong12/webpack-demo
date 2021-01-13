@@ -16,7 +16,7 @@ module.exports={
     // 入口
     entry:{
         'main':'./src/main.js',
-        'index':'./src/js/index.js'
+        // 'index':'./src/js/index.js'
     },
     // 出口
     output:{
@@ -104,11 +104,38 @@ module.exports={
                  *  airbnb --> eslint-config-airbnb-base eslint eslint-plugin-import
                 */ 
                 test:/\.js$/,
-                exclude:/node_modules/,
+                exclude:/node_modules|main/,
                 loader:'eslint-loader',
                 options:{
                     // 自动修复错误
                     fix:true
+                }
+            },
+            {
+                // js兼容性处理
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                options:{
+                    // 预设：指示babel怎么做兼容
+                    presets:[
+                        ['@babel/preset-env',
+                            // 按需加载处理兼容性
+                            {
+                                useBuiltIns:'usage',
+                                corejs:{
+                                    version:3
+                                },
+                                targets:{
+                                    chrome:'60',
+                                    ie:'9',
+                                    edge:'17',
+                                    firefox:'60',
+                                    safari:'10'
+                                }
+                            }
+                        ]
+                    ]
                 }
             }
         ]
