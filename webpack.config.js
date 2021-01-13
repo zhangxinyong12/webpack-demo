@@ -11,7 +11,7 @@ const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin
 // 设置nodejs环境变量
 // process.env.NODE_ENV='development';
 module.exports={
-    // 模式 开发模式:development;生成环境:production
+    // 模式 开发模式:development;生成环境:production 自动会压缩js代码
     mode:'development',
     // 入口
     entry:{
@@ -22,7 +22,7 @@ module.exports={
     output:{
         filename:'js/[name].js',
         path:resolve(__dirname,'dist'),
-       publicPath:'/' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
+       publicPath:'./' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
     },
     // loader 配置
     module:{
@@ -146,7 +146,13 @@ module.exports={
         // 默认会创建一个空的HTML,自动引入打包输出的所有资源，无需再手动引入
         new HtmlWebpackPlugin({
             // 使用模板文件
-            template:'./src/index.html'
+            template:'./src/index.html',
+            minify:{
+                // 空格
+                collapseWhitespace:true,
+                // 注释
+                removeComments:true
+            }
         }),
         new MiniCssExtractPlugin({
             filename:'css/index.css'
