@@ -97,21 +97,6 @@ module.exports={
                 }
             },
             {
-                /*
-                 * 语法检查 eslint-loader eslint
-                 *  设置规则：
-                 *  package.json 中  eslintConfig中设置~
-                 *  airbnb --> eslint-config-airbnb-base eslint eslint-plugin-import
-                */ 
-                test:/\.js$/,
-                exclude:/node_modules|main/,
-                loader:'eslint-loader',
-                options:{
-                    // 自动修复错误
-                    fix:true
-                }
-            },
-            {
                 // js兼容性处理
                 test:/\.js$/,
                 exclude:/node_modules/,
@@ -137,7 +122,23 @@ module.exports={
                         ]
                     ]
                 }
-            }
+            },
+            
+            {
+                /* 要先语法检查在做兼容性处理
+                 * 语法检查 eslint-loader eslint
+                 *  设置规则：
+                 *  package.json 中  eslintConfig中设置~
+                 *  airbnb --> eslint-config-airbnb-base eslint eslint-plugin-import
+                */ 
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'eslint-loader',
+                options:{
+                    // 自动修复错误
+                    fix:true
+                }
+            },
         ]
     },
     // plugins

@@ -1,11 +1,3 @@
-import 'core-js/modules/es.object.to-string.js';
-import 'core-js/modules/es.promise.js';
-import 'core-js/modules/web.timers.js';
-
-/* eslint-disable */
-import 'core-js/modules/es.object.to-string.js';
-
-
 /**
  * 入口文件。引入需要的资源。webpack会自动分析依赖并引入打包
  */
@@ -18,10 +10,10 @@ import './font-icon/iconfont.css'; // 全部兼容性处理。代码体积大
 
 require('./js/index.js');
 
-var p = new Promise(function (resolve) {
-  setTimeout(function () {
+const p = new Promise((resolve) => {
+  setTimeout(() => {
     console.log('promise---');
     resolve('22');
   }, 3000);
 });
-p.then(function () {});
+p.then(() => {});
