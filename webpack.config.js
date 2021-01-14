@@ -4,6 +4,7 @@
  */
 
 const {resolve}=require('path');
+const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin');
@@ -22,7 +23,7 @@ module.exports={
     output:{
         filename:'js/[name].js',
         path:resolve(__dirname,'dist'),
-       publicPath:'./' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
+        publicPath:'/' // 因为打包资源后不能解析“./”之类的路径，需要通过publicPath配置
     },
     // loader 配置
     module:{
@@ -34,9 +35,9 @@ module.exports={
                 use:[
                     // use数组中的loader执行顺序；从右到左 从下到上
                     // 创建style标签 将js中的样式资源插入到head中生效
-                    // 'style-loader',
+                    'style-loader',
                     // 取代style-loader，提取js成单独css文件
-                    MiniCssExtractPlugin.loader,
+                    // MiniCssExtractPlugin.loader,
                     // 将css文件变成commonjs模块加载js中里面内容都是样式字符串
                     'css-loader',
                     /**
@@ -52,8 +53,8 @@ module.exports={
             {
                 test:/\.less$/,
                 use:[
-                    // 'style-loader',
-                    MiniCssExtractPlugin.loader,
+                    'style-loader',
+                    // MiniCssExtractPlugin.loader,
 
                     'css-loader',
                     'less-loader'
@@ -75,9 +76,9 @@ module.exports={
                     esModule:false,
                     // [hash:10]取图片hash前10位 [ext]原来的文件的扩展名
                     name:'[hash:10].[ext]',
-                    // 启动报错 404
-                    outputPath:'img',
-                    publicPath:'./img'
+                    // 不需要配置 启动报错 404
+                    // outputPath:'img',
+                    // publicPath:'/img'
                 },
             },
             {
@@ -93,7 +94,6 @@ module.exports={
                 loader:'file-loader',
                 options:{
                     name:'[hash:10].[ext]',
-                    outputPath:'iconfont'
                 }
             },
             {
@@ -155,11 +155,11 @@ module.exports={
                 removeComments:true
             }
         }),
-        new MiniCssExtractPlugin({
-            filename:'css/index.css'
-        }),
-        // 压缩css
-        new OptimizeCssAssetsWebpackPlugin()
+        // new MiniCssExtractPlugin({
+        //     filename:'css/index.css'
+        // }),
+        // // 压缩css
+        // new OptimizeCssAssetsWebpackPlugin()
     ],
     // 开发服务器 devServer 自动编译打开浏览器 刷新
     // 只会在内存中编译打包，不会有任何输出
@@ -171,7 +171,8 @@ module.exports={
         port:8080,
         // 自动打开默认浏览器
         open:true,
-        // 热加载
+        // 热加载 
+        // 热更新无效。不知道什么原因
         hot:true
     }
 }

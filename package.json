@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "npx webpack serve",
-    "build": "npx webpack",
+    "build:test": "npx webpack",
     "build:prod": "npx webpack --config webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

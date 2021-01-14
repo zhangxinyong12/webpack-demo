@@ -8,12 +8,14 @@ import './css/index.less'; // 引入样式文件
 import './font-icon/iconfont.css'; // 全部兼容性处理。代码体积大
 // import './js/index.js';
 
-require('./js/index.js');
+import initApp from './js/index';
 
-const p = new Promise((resolve) => {
-  setTimeout(() => {
-    console.log('promise---');
-    resolve('22');
-  }, 3000);
-});
-p.then(() => {});
+console.log(333444);
+initApp();
+
+// 热更新
+if (module.hot) {
+  module.hot.accept('./js/index.js', () => {
+    console.log('./js/index.js ----- 热更新');
+  });
+}

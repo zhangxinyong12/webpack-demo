@@ -18,3 +18,11 @@
     // 错误
     const CleanWebpackPlugin = require("clean-webpack-plugin");
     ```
+3. 输入npx webpack server指令后控制台显示成功执行，但是浏览器显示 cannot get/，浏览器控制台显示404  
+   ```
+    output:{
+        filename:'js/[name].js',
+        path:resolve(__dirname,'dist'),
+        publicPath:'/' 
+    },
+   ```

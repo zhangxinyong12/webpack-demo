@@ -17,9 +17,9 @@ module.exports={
     mode:'production',
     entry:'./src/main.js',
     output:{
-        filename:'js/main.js',
+        filename:'js/main.[hash].js',
         path:resolve(__dirname,'dist'),
-        publicPath:'./'
+        publicPath:'/'
     },
     module:{
         rules:[
@@ -65,8 +65,6 @@ module.exports={
                 options:{
                     limit:8*1024,
                     name:'[name].[hash].[ext]',
-                    outputPath:'img',
-                    publicPath:'./img',
                     esModule:false
                 }
             },
@@ -85,7 +83,7 @@ module.exports={
     },
     plugins:[
         new MiniCssExtractPlugin({
-            filename:'css/dist.css'
+            filename:'css/[name].[hash].css'
         }),
         new OptimizeCssAssetsWebpackPlugin(),
         new HtmlWebpackPlugin({
