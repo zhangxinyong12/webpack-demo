@@ -12,10 +12,10 @@ import initApp from './js/index';
 
 console.log(333444);
 initApp();
-
 // 热更新
 if (module.hot) {
   module.hot.accept('./js/index.js', () => {
     console.log('./js/index.js ----- 热更新');
+    initApp();
   });
 }

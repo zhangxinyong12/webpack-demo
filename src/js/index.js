@@ -13,6 +13,6 @@ function initApp() {
     }, 3000);
   });
   p.then(() => {});
-  console.log('initApp-------22343');
+  console.log('initApp-------2234113');
 }
 export default initApp;

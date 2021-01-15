@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npx webpack serve",
+    "start": "npx webpack serve --hot",
     "build:test": "npx webpack",
     "build:prod": "npx webpack --config webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -60,8 +60,8 @@
   },
   "eslintConfig": {
     "extends": "airbnb-base",
-    "rules":{
-      "no-console":"off"
+    "rules": {
+      "no-console": "off"
     }
   }
 }

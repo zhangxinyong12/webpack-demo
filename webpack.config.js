@@ -8,12 +8,14 @@ const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin=require('optimize-css-assets-webpack-plugin');
+const webpack = require('webpack');
 
 // 设置nodejs环境变量
 // process.env.NODE_ENV='development';
 module.exports={
     // 模式 开发模式:development;生成环境:production 自动会压缩js代码
     mode:'development',
+    devtool:'source-map',
     // 入口
     entry:{
         'main':'./src/main.js',
@@ -155,6 +157,7 @@ module.exports={
                 removeComments:true
             }
         }),
+        new webpack.HotModuleReplacementPlugin()
         // new MiniCssExtractPlugin({
         //     filename:'css/index.css'
         // }),
@@ -173,6 +176,7 @@ module.exports={
         open:true,
         // 热加载 
         // 热更新无效。不知道什么原因
-        hot:true
+        hot: true,
+        hotOnly: true 
     }
 }

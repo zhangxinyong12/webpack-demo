@@ -15,6 +15,7 @@ const commonCssLoader=[
 
 module.exports={
     mode:'production',
+    devtool:'source-map',
     entry:'./src/main.js',
     output:{
         filename:'js/main.[hash].js',
