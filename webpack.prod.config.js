@@ -46,6 +46,8 @@ module.exports={
                 exclude:/node_modules/,
                 loader:'babel-loader',
                 options:{
+                    // babel-loader 缓存
+                    cacheDirectory:true,
                     presets:[
                         [
                             '@babel/preset-env',
@@ -66,7 +68,8 @@ module.exports={
                 options:{
                     limit:8*1024,
                     name:'[name].[hash].[ext]',
-                    esModule:false
+                    esModule:false,
+                    outputPath:'img'
                 }
             },
             {
