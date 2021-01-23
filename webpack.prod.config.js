@@ -98,5 +98,12 @@ module.exports={
             }
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    // 代码切割 node_modules中代码单独打包成一个chunk输出 ，
+    // 自动分析多入口chunk中有没有公共的文件，提取并单独打包成一个chunk
+    optimization:{
+        splitChunks:{
+            chunks:'all'
+        }
+    }
 }
