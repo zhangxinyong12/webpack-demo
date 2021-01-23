@@ -14,5 +14,24 @@ function initApp() {
   });
   p.then(() => {});
   console.log('initApp-------2234113');
+
+  const addEle= document.querySelector('#add');
+  addEle.addEventListener('click',()=>{
+    import(/* webpackChunkName:'add' */ /* webpackPrefetch:true */'./add.js').then((mul)=>{
+      console.log(mul.onAddNumber(1,2));
+    })
+  })
+
+
+
+
+
+
+
+
 }
+
+
+
+
 export default initApp;
