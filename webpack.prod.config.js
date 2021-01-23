@@ -18,7 +18,7 @@ module.exports={
     devtool:'source-map',
     entry:'./src/main.js',
     output:{
-        filename:'js/main.[hash].js',
+        filename:'js/main.[contenthash].js',
         path:resolve(__dirname,'dist'),
         publicPath:'/'
     },
@@ -67,7 +67,7 @@ module.exports={
                 loader:'url-loader',
                 options:{
                     limit:8*1024,
-                    name:'[name].[hash].[ext]',
+                    name:'[name].[contenthash].[ext]',
                     esModule:false,
                     outputPath:'img'
                 }
@@ -87,7 +87,7 @@ module.exports={
     },
     plugins:[
         new MiniCssExtractPlugin({
-            filename:'css/[name].[hash].css'
+            filename:'css/[name].[contenthash].css'
         }),
         new OptimizeCssAssetsWebpackPlugin(),
         new HtmlWebpackPlugin({

@@ -26,3 +26,11 @@
         publicPath:'/' 
     },
    ```
+4. 缓存
+   - babel   
+    cacheDirectory:true
+   - 文件资源缓存   
+      - hash: 每次webpack构建时会生成一个唯一的hash值，问题：因为js和css同时使用一个hash值，重新打包，会导致所有资源缓存失效。   
+      - chunkhash:根据chunk生成hash值。如果打包来源同一个chunk，那么hash值就一样。css是在js中引入的，所有同属于一个chunk
+      - contenhash：根据文件的内容生成hash，不同文件hash值一定不一样。  
+
