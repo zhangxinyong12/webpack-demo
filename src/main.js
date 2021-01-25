@@ -9,7 +9,7 @@ import './font-icon/iconfont.css'; // 全部兼容性处理。代码体积大
 // import './js/index.js';
 
 import initApp from './js/index';
-
+console.log($);
 console.log(333444);
 initApp();
 // 热更新

@@ -22,6 +22,10 @@ module.exports={
         path:resolve(__dirname,'dist'),
         publicPath:'/'
     },
+    // 不打包的资源 注意要在index.html 中引入资源
+    externals:{
+        jquery:'jQuery'
+    },
     module:{
         rules:[
             {
@@ -109,6 +113,9 @@ module.exports={
     optimization:{
         splitChunks:{
             chunks:'all'
+        },
+        runtimeChunk:{
+            name:'mainfest'
         }
     }
 }
