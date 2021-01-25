@@ -45,7 +45,7 @@ module.exports={
                 test:/\.js$/,
                 exclude:/node_modules/,
                 use:[
-                    // 开启多进程打包 ，启动耗时600ms ,也需要通讯，只有工作耗时长的才需要多进程打包
+                    // 开启多线程打包 ，启动耗时600ms ,也需要通讯，只有工作耗时长的才需要多线程打包
                     'thread-loader',
                     {
                         loader:'babel-loader',
