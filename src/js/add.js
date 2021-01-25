@@ -1,4 +1,4 @@
-export function onAddNumber(a, b) {
+export default function onAddNumber(a, b) {
   console.log('onAddNumber 方法');
   return (a + b);
 }
