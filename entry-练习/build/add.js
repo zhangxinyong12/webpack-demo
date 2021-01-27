@@ -18,26 +18,6 @@
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ add; }\n/* harmony export */ });\nfunction add(a,b) {\r\n    return a+b;\r\n}\n\n//# sourceURL=webpack:///./src/add.js?");
 
-/***/ }),
-
-/***/ "./src/count.js":
-/*!**********************!*\
-  !*** ./src/count.js ***!
-  \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ count; }\n/* harmony export */ });\nfunction count(a,b) {\r\n    return a-b;\r\n}\n\n//# sourceURL=webpack:///./src/count.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add */ \"./src/add.js\");\n/* harmony import */ var _count__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./count */ \"./src/count.js\");\n\r\n\r\n\r\n\r\nconsole.log('index.js --- 开始执行----');\r\n\r\nconsole.log((0,_add__WEBPACK_IMPORTED_MODULE_0__.default)(2,3));\r\nconsole.log((0,_count__WEBPACK_IMPORTED_MODULE_1__.default)(2,3));\n\n//# sourceURL=webpack:///./src/index.js?");
-
 /***/ })
 
 /******/ 	});
@@ -97,7 +77,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _add
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./src/index.js");
+/******/ 	__webpack_require__("./src/add.js");
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;
