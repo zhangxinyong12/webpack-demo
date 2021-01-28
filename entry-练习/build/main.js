@@ -10,13 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/add.js":
-/*!********************!*\
-  !*** ./src/add.js ***!
-  \********************/
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ add; }\n/* harmony export */ });\nfunction add(a,b) {\r\n    return a+b;\r\n}\n\n//# sourceURL=webpack:///./src/add.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_add__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/add */ \"./src/js/add.js\");\n/* harmony import */ var _js_count__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/count */ \"./src/js/count.js\");\n\r\n\r\n\r\n\r\nconsole.log('index.js --- 开始执行----');\r\n\r\nconsole.log((0,_js_add__WEBPACK_IMPORTED_MODULE_0__.default)(2,3));\r\nconsole.log((0,_js_count__WEBPACK_IMPORTED_MODULE_1__.default)(2,3));\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/add.js":
+/*!***********************!*\
+  !*** ./src/js/add.js ***!
+  \***********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ add; }\n/* harmony export */ });\nfunction add(a,b) {\r\n    return a+b;\r\n}\n\n//# sourceURL=webpack:///./src/js/add.js?");
+
+/***/ }),
+
+/***/ "./src/js/count.js":
+/*!*************************!*\
+  !*** ./src/js/count.js ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": function() { return /* binding */ count; }\n/* harmony export */ });\nfunction count(a,b) {\r\n    return a-b;\r\n}\n\n//# sourceURL=webpack:///./src/js/count.js?");
 
 /***/ })
 
@@ -77,7 +97,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	__webpack_require__("./src/add.js");
+/******/ 	__webpack_require__("./src/index.js");
 /******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;

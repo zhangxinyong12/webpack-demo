@@ -1,5 +1,5 @@
-// import add from './add';
-// import count from './count';
+import add from '@/js/add';
+import count from '@/js/count';
 
 
 console.log('index.js --- 开始执行----');
